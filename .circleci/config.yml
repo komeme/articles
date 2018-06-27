@@ -1,0 +1,23 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    working_directory: ~/testing
+    steps:
+      - checkout
+      - run:
+          name: check python version
+          commands: python -V
+
+workflows:
+  version: 2
+  updates:
+    jobs:
+      - build:
+      - deploy:
+          filters:
+            branches:
+              only: master
