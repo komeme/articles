@@ -49,21 +49,22 @@ jobs:
           path: test-reports
           destination: test-reports
 
-  deploy:
-    # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.5
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-    working_directory: ~/deploy
-    steps:
-      - checkout
-      - run:
-          name: check python version
-          commands: python -V
+#  deploy:
+#    docker:
+#    # specify the version you desire here
+#      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+#      - image: circleci/python:3.6.5
+#
+#      # Specify service dependencies here if necessary
+#      # CircleCI maintains a library of pre-built images
+#      # documented at https://circleci.com/docs/2.0/circleci-images/
+#      # - image: circleci/postgres:9.4
+#    working_directory: ~/deploy
+#    steps:
+#      - checkout
+#      - run:
+#          name: check python version
+#          commands: python -V
 
 workflows:
   version: 2
